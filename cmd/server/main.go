@@ -5,11 +5,11 @@ import (
 	"net"
 	"os"
 
-	"grpc-file-service/internal/service"
-	"grpc-file-service/proto"
-
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+
+	"github.com/junhekdevsru/grpc-file-service-for-test/internal/service"
+	"github.com/junhekdevsru/grpc-file-service-for-test/proto"
 )
 
 func main() {

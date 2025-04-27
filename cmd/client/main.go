@@ -10,7 +10,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"grpc-file-service/proto" // Путь пока локальный, потом поменяем на github.com/...
+	"github.com/junhekdevsru/grpc-file-service-for-test/proto"
 )
 
 func main() {

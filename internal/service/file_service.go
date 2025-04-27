@@ -2,7 +2,6 @@ package service
 
 import (
 	"context"
-	"grpc-file-service/proto"
 	"io"
 	"os"
 	"path/filepath"
@@ -10,6 +9,8 @@ import (
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+
+	"github.com/junhekdevsru/grpc-file-service-for-test/proto"
 )
 
 type FileService struct {

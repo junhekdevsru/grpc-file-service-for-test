@@ -23,3 +23,11 @@
 ```bash
 docker build -t grpc-file-service .
 docker run -p 50051:50051 grpc-file-service
+
+##  Тестирование
+
+### Быстрая проверка сервиса
+
+```bash
+cd cmd/tester
+go run main.go

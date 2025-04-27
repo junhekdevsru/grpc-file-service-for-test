@@ -1,0 +1,17 @@
+# Golang
+bin/
+*.exe
+*.out
+*.test
+
+# IDE и системы
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+
+# Docker
+*.dockerfile
+*.tar

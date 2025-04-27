@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package file;
+
+option go_package = "grpc-file-service/proto;proto";
+
+service FileService {
+    // Загрузка файла через стриминг чанков
+    rpc UploadFile(stream UploadFileRequest) returns (UploadFileResponse);
+
+    // Скачивание файла через стриминг чанков
+    rpc DownloadFile(DownloadFileRequest) returns (stream DownloadFileResponse);
+
+    // Получение списка файлов
+    rpc ListFiles(ListFilesRequest) returns (ListFilesResponse);
+}
+
+// === Сообщения ===
+
+// Загрузка файла, клиент отправляет чанки
+message UploadFileRequest {
+    string filename = 1; // только в первом чанке обязательно
+    bytes content = 2;   // содержимое файла
+}
+
+// Ответ после загрузки
+message UploadFileResponse {
+    string message = 1;
+}
+
+// Запрос на скачивание файла
+message DownloadFileRequest {
+    string filename = 1;
+}
+
+// Ответ чанком файла
+message DownloadFileResponse {
+    bytes content = 1;
+}
+
+// Запрос списка файлов (пустой)
+message ListFilesRequest {}
+
+// Ответ со списком файлов
+message ListFilesResponse {
+    repeated FileInfo files = 1;
+}
+
+// Информация о файле
+message FileInfo {
+    string name = 1;
+    string created_at = 2; // можно использовать формат RFC3339
+    string updated_at = 3;
+}

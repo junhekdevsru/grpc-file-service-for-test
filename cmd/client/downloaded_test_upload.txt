@@ -1,0 +1,1 @@
+echo "hello again" > cmd/client/test_upload.txt

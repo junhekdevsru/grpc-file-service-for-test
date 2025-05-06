@@ -1,4 +1,5 @@
-module grpc-file-service
+module github.com/junhekdevsru/grpc-file-service-for-test
+
 
 go 1.24.2
 

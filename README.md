@@ -16,41 +16,6 @@
 - Protocol Buffers
 - Docker
 
-##  Структура проекта
-grpc-file-service/
-├── cmd/
-│   └── server/
-│       └── main.go                # Точка входа: запуск сервера, инициализация зависимостей
-├── internal/
-│   ├── domain/
-│   │   └── file/
-│   │       ├── entity.go          # Структура File: имя, путь, дата, и т.д.
-│   │       └── repository.go      # Интерфейс FileRepository
-│   ├── usecase/
-│   │   └── file/
-│   │       └── usecase.go         # Логика: UploadFile, ListFiles, DownloadFile
-│   ├── delivery/
-│   │   └── grpc/
-│   │       └── handler.go         # Реализация gRPC-сервиса: FileServiceServer
-│   ├── infrastructure/
-│   │   ├── limiter/
-│   │   │   └── semaphore.go       # Семафор с учётом context
-│   │   ├── storage/
-│   │   │   └── local_fs.go        # Реализация репозитория на локальной ФС
-│   │   └── logger/
-│   │       └── logger.go          # Логгер с уровнями
-├── proto/
-│   └── file_service.proto         # gRPC-описание
-├── configs/
-│   └── config.yaml                # Конфиг сервера: порт, пути и т.п.
-├── scripts/
-│   └── test_stress.sh             # Стресс-тест на лимитеры
-├── client/
-│   └── main.go                    # gRPC-клиент для загрузки/скачивания
-├── Dockerfile
-├── go.mod
-├── README.md
-
 
 ### Сборка и запуск через Docker
 
